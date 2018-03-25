@@ -59,6 +59,7 @@
                         this.question = 'Oops, an Error occurred :/';
                 }
 
+                // set 4 buttons that have the wrong answer
                 this.btnData[0].answer = this.generateRandomNumber(correctAnswer - 10, correctAnswer + 10, correctAnswer);
                 this.btnData[0].correct = false;
                 this.btnData[1].answer = this.generateRandomNumber(correctAnswer - 10, correctAnswer + 10, correctAnswer);
@@ -68,10 +69,12 @@
                 this.btnData[3].answer = this.generateRandomNumber(correctAnswer - 10, correctAnswer + 10, correctAnswer);
                 this.btnData[3].correct = false;
 
+                // change one of the 4 buttons to get the correct answer
                 const correctButton = this.generateRandomNumber(0, 3);
                 this.btnData[correctButton].correct = true;
                 this.btnData[correctButton].answer = correctAnswer;
             },
+            // kinda making the 'what is X + Y = ?' thing
             generateRandomNumber(min, max, except) {
                 const rndNumber = Math.round(Math.random() * (max - min)) + min;
                 console.log(min, max, rndNumber);
